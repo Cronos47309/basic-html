@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box.container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: flex;
+
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #0a06fa;
+            border-radius: 14px;
+            position: absolute;
+            top: 50px;
+            left: 50px; 
+            transition: transform 1s ease-in-out;
+            animation: boxAnimation 4s infinite;
+        }
+
+        .box:nth-child(1) {
+            opacity: 0.2;
+        }
+
+        .box:nth-child(2) {
+            opacity: 0.6;
+        }
+
+        .box:nth-child(3) {
+            opacity: 0.9;
+        }
+
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        .container:hover .box:nth-child(2) {
+            transform:rotate(15deg) translate(15px,15px);
+        }
+        .container:hover .box:nth-child(3) {
+            transform:rotate(30deg) translate(30px,30px);
+        }
+        @keyframes boxAnimation {
+            0% {background-color: blue;}
+            25% {background-color: chartreuse;}
+            50% {background-color: yellow;}
+            75% {background-color: aqua;}
+            100% {background-color: red;} 
+            left: 250px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="box-container"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </main>
+</body>
+</html>
